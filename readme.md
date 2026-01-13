@@ -15,7 +15,7 @@ A simple Task Tracker web application.
 
 ## 📂 How to Run
 1. Download or clone the repository
-2. Open `index.html` in your browser
+2. Open `app.html` in your browser
 
 ## 📸 Preview
 ![Task Tracker Preview](screenshots)
