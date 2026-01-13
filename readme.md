@@ -13,9 +13,6 @@ A simple Task Tracker web application.
 - CSS
 - JavaScript
 
-## 📸 Preview
-(Add a screenshot here)
-
 ## 📂 How to Run
 1. Download or clone the repository
 2. Open `index.html` in your browser
