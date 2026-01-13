@@ -1,0 +1,294 @@
+:root {
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --success: #10b981;
+  --danger: #ef4444;
+  --bg-dark: #ffffff;
+  --bg-card: #f8fafc;
+  --bg-light: #ffffff;
+  --text-primary: #1e293b;
+  --text-muted: #64748b;
+  --border: rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #000000 0%, #0b376f 100%);
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.2) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 540px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 32px;
+  border-radius: 24px;
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.15),
+    0 15px 35px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  position: relative;
+  z-index: 1;
+  transition: var(--transition);
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 35px 70px rgba(0, 0, 0, 0.2),
+    0 20px 45px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: #0b376f;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+  text-align: center;
+  color: #cbd5e1;
+  margin-bottom: 20px;
+}
+
+.input-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+input {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  outline: none;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--text-primary);
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+input:focus {
+  border-color: #667eea;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+  transform: translateY(-2px);
+}
+
+button {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: var(--transition);
+}
+
+#addBtn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+#addBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+#addBtn:hover::before {
+  left: 100%;
+}
+
+#addBtn:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(16, 185, 129, 0.4);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.secondary {
+  flex: 1;
+  background: #334155;
+  color: white;
+}
+
+.secondary:hover {
+  background: #475569;
+}
+
+.danger {
+  flex: 1;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  box-shadow: 0 6px 15px rgba(239, 68, 68, 0.3);
+  transition: var(--transition);
+}
+
+.danger:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(239, 68, 68, 0.4);
+}
+
+.task-list {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.task-item {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.8) 100%);
+  margin-bottom: 12px;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--transition);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.task-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(135deg, #000000 0%, #0b376f 100%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.task-item:hover::before {
+  opacity: 1;
+}
+
+.task-item:hover {
+  transform: translateY(-3px) scale(1.02);
+  border-color: rgba(102, 126, 234, 0.2);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.task-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.task-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.task-status {
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
+.completed .task-title {
+  opacity: 0.7;
+}
+
+.completed .task-status {
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.task-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.complete-btn {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.complete-btn:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.4);
+}
+
+.delete-btn {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.delete-btn:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.4);
+}
