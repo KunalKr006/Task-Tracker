@@ -18,7 +18,7 @@ A simple Task Tracker web application.
 2. Open `index.html` in your browser
 
 ## 📸 Preview
-![Task Tracker Preview](screenshots.png)
+![Task Tracker Preview](screenshots)
 
 
 
